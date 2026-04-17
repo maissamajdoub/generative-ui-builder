@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modification d'éléments HTML avec l'IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>HTML Generator</h1>
+        </header>
+        
+    
+
+        <section class="input-section">
+            <textarea id="user-input" placeholder="how can i help you..." rows="4"></textarea>
+            <div class="button-group">
+                <button onclick="undo()"  class="btn primary">Undo</button>
+                <button onclick="redo()" class="btn primary">Redo</button>
+                <button id="duplicateElementBtn" class="btn primary">Duplicate</button>
+                <button id="deleteElementBtn" class="btn primary">Delete</button>
+
+
+                <button id="submitButton" onclick="sendMessage()" class="btn primary">Send</button>
+                <button onclick="exportHtml('mon_fichier.html')" class="btn primary">Save</button>
+                <input type="file" id="fileInput" accept=".html" style="display:none" onchange="loadFile(event)">
+                <button onclick="document.getElementById('fileInput').click()" class="btn primary">Import</button>
+                
+            </div>
+            
+        </section>
+
+        <section class="generated-wrapper">
+           
+            <div id="generated" class="generated-box"></div>
+            
+        </section>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
