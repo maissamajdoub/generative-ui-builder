@@ -1,0 +1,245 @@
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+/* Conteneur principal */
+.app-container {
+    width: 100%;
+    max-width: 960px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+}
+
+/* Header */
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    color: #007bff;
+}
+
+/* Section de saisie */
+.input-section {
+    margin-bottom: 30px;
+}
+
+#user-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+/* Boutons */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.primary:hover {
+    background-color: #0056b3;
+}
+
+.secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.secondary:hover {
+    background-color: #5a6268;
+}
+
+.warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.warning:hover {
+    background-color: #e0a800;
+}
+/* Style des boutons Undo/Redo */
+.btn.secondary {
+    background-color: #6c757d;
+    position: relative;
+}
+
+.btn.secondary:disabled {
+    background-color: #495057;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn.secondary::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.btn.secondary:hover::after {
+    opacity: 1;
+}
+/* Zone de contenu généré */
+.generated-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.generated-box {
+    background-color: #f1f3f5;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    overflow-x: auto;
+    min-height: 100px;
+}
+
+/* Élément généré individuel */
+.generated {
+    background: #e9ecef;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.generated:hover {
+    background-color: #dee2e6;
+}
+
+/* Élément sélectionné */
+.selected {
+    background-color: #007bff !important;
+    color: white;
+    border: 2px solid #0056b3;
+}
+
+/* Tableaux */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Message d'erreur */
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Elément cliquable individuel */
+.element {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.element:hover {
+    background-color: #f8f9fa;
+    border-color: #007bff;
+}
+/* Onglets de navigation (style Excel) */
+.nav-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid #dee2e6;
+    background-color: #f1f3f5;
+    border-radius: 0 0 10px 10px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.nav-tab {
+    padding: 10px 16px;
+    border: 1px solid #ced4da;
+    background-color: #e9ecef;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    font-weight: 500;
+    color: #495057;
+}
+
+.nav-tab:hover {
+    background-color: #dee2e6;
+    border-color: #adb5bd;
+}
+
+.nav-tab.active {
+    background-color: #ffffff;
+    border-bottom: 1px solid white;
+    border-color: #ced4da #ced4da white;
+    color: #007bff;
+    font-weight: bold;
+}
